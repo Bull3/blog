@@ -11,23 +11,23 @@ blog_path: /
 link:
   theme: color # 链接样式，color: 彩色图标  white: 黑白图标
   items:
-    rss: /atom.xml
-    github: https://github.com/yelog
-    facebook: https://www.facebook.com/faker.tops
-    twitter:
-    linkedin:
-    instagram: https://www.facebook.com/faker.tops
-    reddit: https://www.reddit.com/user/yelog/
-    weibo: http://weibo.com/u/2307534817
-    jianshu: https://www.jianshu.com/u/ff56736de7cf
-    zhihu: https://www.zhihu.com/people/jaytp/activities
-    csdn:
-    oschina: https://my.oschina.net/yelog
-    juejin:
-    email: jaytp@qq.com
-    qq: 872336115
-    kugou: https://www.kugou.com/
-    neteasemusic: https://music.163.com/#/user/home?id=88151013
+    # rss: /atom.xml
+    github: https://github.com/Bull3
+    # facebook: https://www.facebook.com/faker.tops
+    # twitter:
+    # linkedin:
+    # instagram: https://www.facebook.com/faker.tops
+    # reddit: https://www.reddit.com/user/yelog/
+    # weibo: http://weibo.com/u/2307534817
+    # jianshu: https://www.jianshu.com/u/ff56736de7cf
+    zhihu: https://www.zhihu.com/people/zi-yuan-4-78/activities
+    # csdn:
+    # oschina: https://my.oschina.net/yelog
+    # juejin:
+    qq: 1019067334
+    email: 1019067334@qq.com
+    # kugou: https://www.kugou.com/
+    # neteasemusic: https://music.163.com/#/user/home?id=88151013
 
 ##########多作者模式############
 author:
@@ -54,11 +54,11 @@ category:
 # 左下角自定义菜单
 menu:
   about:  # '关于' 按钮
-    on: true # 是否显示
+    on: false # 是否显示
     url: /about  # 跳转链接
     type: 1 # 跳转类型 1：站内异步跳转 2：当前页面跳转 3：打开新的tab页
   friend: # '友链' 按钮
-    on: true # 是否展示
+    on: false # 是否展示
   menus: # 添加的其他菜单写在 menus 下，如下三个菜单：动态菜单1、动态菜单2、动态菜单3
     相册:
       on: false
@@ -69,14 +69,14 @@ menu:
       url: http://yelog.org/
       type: 2  # 跳转类型 2：当前页面跳转
     github:
-      on: false
-      url: https://github.com/yelog
+      on: true
+      url: https://github.com/Bull3
       type: 3  # 跳转类型 3：打开新的tab页
 
 # 文末声明
-article_txt: 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 jaytp@qq.com
+article_txt: 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 1019067334@qq.com
 
-bottom_text: ©2016-2019 Yelog
+bottom_text: ©2016-2019 
 # 自定义页面最下方的站点版权信息
 # 如果不填，则自定义为 ©2017 author (这个author为hexo根目录_config.yml中配置的)
 
@@ -165,7 +165,7 @@ code:
 highlight:
   on: true # true开启代码高亮
   lineNum: true # true显示行号
-  theme: atom-light
+  theme: atom-dark
 # 代码高亮主题,效果可以查看 https://highlightjs.org/static/demo/
 # 支持主题：
 # sublime : 参考sublime的高亮主题
@@ -210,7 +210,7 @@ friends:
 
 ##########评论设置#############
 comment:
-  on: false
+  on: true
   type: gitalk  # 评论系统：gitalk、disqus、gentie、gitment,注意：使用时，在下方对应位置进行配置
   comment_count: true  # 文章标题下方显示评论数
   preload_comment: false  # 预加载评论区
@@ -230,11 +230,11 @@ gentie:
   # 网易云跟帖暂时不支持查询评论数，所以启用时，把评论数关掉，上方comment_count: false。
 
 gitalk:
-  githubID: yelog
-  repo: yelog.github.io
-  ClientID:
-  ClientSecret:
-  adminUser: yelog
+  githubID: Bull3
+  repo: Bull3.github.io
+  ClientID: 26486a96033dce47fdda
+  ClientSecret: 72f2b3d5bc8bf804fc1fab73554a23d7e6bc51d3
+  adminUser: Bull3
   distractionFreeMode: true
   language: zh-CN
   perPage: 10
@@ -251,8 +251,8 @@ gitalk:
 
 
 gitment:
-  owner: yelog
-  repo: yelog.github.io
+  owner: Bull3
+  repo: Bull3.github.io
   client_id:
   client_secret:
   # gitment : 通过github issue实现的评论系统
