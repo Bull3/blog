@@ -1,4 +1,4 @@
-以前端知识为主要内容, 对编码知识,工程知识以及计算机知识的总结
+以前端知识为主要内容, 对编码知识, 工程知识以及计算机知识的总结
 
 到目前为止已经写了<code class="article_number"></code>篇文章， 共<code class="site_word_count"></code>字。
 

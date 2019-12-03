@@ -1,33 +1,46 @@
-> 本章内容旨在对管理系统的核心组件进行封装, 通常是表格组件和表单组件, 分为以下几块
+---
+title: 基于Vue + Element的二次封装之旅
+categories: 前端类
+description: 描述
+tags:
+  - 前端
+date: 2019-12-03 17:18:05
+---
 
-> * 封装表格组件 (内嵌分页组件)
-> * 封装表单组件
-> * 打包并发布开源的npm包
+> **本章内容旨在对管理系统的核心组件进行封装, 通常是 表格组件 和 表单组件**
+> 文章进度如下:
+> 1. [x] 二次封装的核心思想
+> 2. [x] 封装表格组件
+> 3. [ ] 封装表单组件
+> 4. [ ] 打包并发布开源的npm包
 
-> 二次封装的核心思想
+## 1. 二次封装的核心思想
 
 > * 尽量少的改动原始组件的使用方法, 降低新组件的使用成本
 > * 以数据配置为核心, 根据数据自动渲染模板, 而不是手动编写模板
 
-## 封装表格组件 (内嵌分页组件)
+## 2. 封装表格组件
 
-### 1. 封装表格组件
+### 2.1 期望封装结果
+
 ```html
-<!-- 期望的组件最终用法 -->
+<!-- 传入 columns 数组即可动态渲染表格, 其他属性及事件的用法均与 el-table 一致 -->
 <b-table :columns="columns" :data="tableData">
 </b-table>
-<!-- columns是表格动态渲染所需的数据, 即表格列数据, 其他属性和事件用法均与el-table相同 -->
 ```
-#### 1.1 基础功能
 
-##### 1.1.1 为了贴近el-table的原始使用方法, 需要使用vue的 [\$attrs](https://cn.vuejs.org/v2/api/#vm-attrs) 和 [\$listeners](https://cn.vuejs.org/v2/api/#vm-listeners) 对属性和事件进行跨组件传递
+### 2.2 基础功能
+
+### 2.1.1 实现对el-table的属性和事件的继承
+
+> 利用vue中高阶组件传参的2个利器 [\$attrs](https://cn.vuejs.org/v2/api/#vm-attrs) 和 [\$listeners](https://cn.vuejs.org/v2/api/#vm-listeners)
 
 ```html
 <el-table v-bind="$attrs" v-on="$listeners">
 </el-table>
 ```
 
-##### 1.1.2 根据数据循环渲染el-table-column
+### 1.1.2 根据数据循环渲染el-table-column
 
 ```html
 模板:
@@ -63,7 +76,7 @@ columns: [
 
 > 详细分析请看我的另一篇文章[《v-for为什么要加key，能用index作为key么》](https://www.cnblogs.com/youhong/p/11327062.html)
 
-#### 1.2 添加默认配置
+#### 1.2 添加表格默认配置
 ```html
 <el-table v-bind="{ stripe: true, border: true, ...$attrs }" v-on="$listeners">
 </el-table>
@@ -72,8 +85,6 @@ columns: [
 使用es6的扩展运算符 ... 来展开\$attrs, 默认配置和用户传入值就可以完美拼接, 共同作用在模板上
 这里值得注意的是: stripe: true, border: true这些默认字段必须写在前面, 若写在后面则将覆盖\$attrs传入的stripe和border
 
-#### 1.3 嵌入分页组件
+## 2. 封装表单组件
 
-
-
-### 2. 封装表单组件
+## 3. 打包并发布开源的npm包
