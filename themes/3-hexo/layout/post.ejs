@@ -2,7 +2,7 @@
 <html>
 <%- partial('_partial/header') %>
 <body>
-<aside class="nav">
+<aside class="nav fullscreen">
     <div class="nav-left">
         <%- fragment_cache('left', function(){
             return partial('_partial/nav-left');
@@ -16,7 +16,7 @@
             return partial('_partial/nav-right');
         }) %>
     </div>
-    <div class="hide-list">
+    <div class="hide-list fullscreen">
         <div class="semicircle">
             <div class="brackets first"><</div>
             <div class="brackets">&gt;</div>

@@ -29,9 +29,7 @@ date: 2019-12-03 17:18:05
 </b-table>
 ```
 
-### 2.2 基础功能
-
-### 2.1.1 实现对el-table的属性和事件的继承
+### 2.2 实现对el-table的属性和事件的继承
 
 > 利用vue中高阶组件传参的2个利器 [\$attrs](https://cn.vuejs.org/v2/api/#vm-attrs) 和 [\$listeners](https://cn.vuejs.org/v2/api/#vm-listeners)
 
@@ -40,16 +38,16 @@ date: 2019-12-03 17:18:05
 </el-table>
 ```
 
-### 1.1.2 根据数据循环渲染el-table-column
+### 2.3 根据columns数组循环渲染el-table-column
 
 ```html
-模板:
+<!-- 模板: -->
 <el-table v-bind="$attrs" v-on="$listeners">
     <template v-for="column in columns">
-        <!-- 没有插槽colSlot时, 直接根据数据渲染模板 -->
+        <!-- 无插槽模式: column对象没有colSlot字段时, 将直接渲染列字段 -->
         <el-table-column v-if="!column.colSlot" :key="column.id" v-bind="column">
         </el-table-column>
-        <!-- 表格列较为复杂或特殊时可启用插槽时, 将直接渲染插槽自定义内容 -->
+        <!-- 插槽模式: column对象指定colSlot时, colSlot作为插槽的名字 表格列较为复杂或特殊时可启用插槽时, 将直接渲染插槽自定义内容 -->
         <el-table-column v-else :key="column.id" v-bind="column">
             <template slot-scope="scope">
                 <slot :name="column.colSlot" v-bind="scope" />
@@ -60,7 +58,7 @@ date: 2019-12-03 17:18:05
 ```
 
 ```javascript
-数据:
+// 数据:
 columns: [
     { id: "selection", type: "selection", width: "55" },
     { id: "rname", label: "用户名称", colSlot: "rname" },
@@ -76,15 +74,17 @@ columns: [
 
 > 详细分析请看我的另一篇文章[《v-for为什么要加key，能用index作为key么》](https://www.cnblogs.com/youhong/p/11327062.html)
 
-#### 1.2 添加表格默认配置
+### 2.4 添加表格默认属性
 ```html
 <el-table v-bind="{ stripe: true, border: true, ...$attrs }" v-on="$listeners">
 </el-table>
 ```
-为了提高组件复用性, 设置了一些默认字段
+我们还可以预设一些默认属性, 方便表格的使用
 使用es6的扩展运算符 ... 来展开\$attrs, 默认配置和用户传入值就可以完美拼接, 共同作用在模板上
-这里值得注意的是: stripe: true, border: true这些默认字段必须写在前面, 若写在后面则将覆盖\$attrs传入的stripe和border
+这样写既可以在不传入stripe和border时提供默认值, 想自定义时也可以手动传入stripe和border
+> 这里值得注意的是: stripe和border这些默认字段必须写在\$attrs前面, 否则, 当你手动传入stripe和border时, 将会因为字段被默认属性重写而失效
 
-## 2. 封装表单组件
+## 3. 封装表单组件
 
-## 3. 打包并发布开源的npm包
+
+## 4. 打包并发布开源的npm包
