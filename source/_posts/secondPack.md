@@ -72,7 +72,7 @@ columns: [
 而当表格列较为复杂时, 需要启用插槽, 因此给column对象额外增加了一个字段colSlot以供具名插槽 `<slot :name="column.colSlot" />`使用
 > <font color=red>**tips:** v-for的key需要手动指定, 且不要以index为key, 最好是给column对象额外添加id字段作为v-for的key</font>
 
-> 详细分析请看我的另一篇文章[《v-for为什么要加key，能用index作为key么》](https://www.cnblogs.com/youhong/p/11327062.html)
+> 详细分析请看这篇文章[《v-for为什么要加key，能用index作为key么》](https://www.cnblogs.com/youhong/p/11327062.html)
 
 ### 2.4 添加表格默认属性
 ```html
